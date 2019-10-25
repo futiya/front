@@ -1,0 +1,27 @@
+<mat-sidenav-container class="login-side-container">
+  <mat-sidenav mode="side" opened class="login-sidenav">
+      <div class="side-container">
+        <h2 class="logo"><mat-icon style="font-size: large;">supervised_user_circle</mat-icon>Mentor On Demand</h2>
+    <p><strong>Mentor On Demand</strong> is an online mentorship platform under the FullStack Technical. This means you can find a mentor to start your full stack journey.</p>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+      <div class="login-main-container">
+          <h2>Log in Mentor On Demand</h2>
+          <mat-form-field>
+            <input matInput placeholder="Enter your email" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+              <input matInput placeholder="Enter your password" [formControl]="password" required>
+              <mat-error *ngIf="password.invalid">{{getPassWordErrorMessage()}}</mat-error>
+            </mat-form-field>
+            <button mat-stroked-button color="primary">LOG IN</button>
+        </div>
+        <div class="foot">
+            <a href="">Forgot your password?</a>
+            <span style="margin-top: 15px;">Don't have an account? <a href="/signup">Sign up</a></span>
+          </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

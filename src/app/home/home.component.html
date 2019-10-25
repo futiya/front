@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Mentor On Demand</span>
+    <div class="toolbar-search">
+    <mat-form-field>
+        <input matInput placeholder="Find Mentor" type="search">
+      </mat-form-field>
+
+      <button mat-mini-fab color="primary">
+          <mat-icon>search</mat-icon>
+        </button>
+
+    </div>
+
+    <span class="toolbar-spacer"></span>
+    <div class="toolbar-button-row">
+      <button mat-stroked-button [routerLink]="['/login']">Login</button>
+      <button mat-stroked-button [routerLink]="['/signup']">SignUp</button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>
+

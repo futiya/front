@@ -1,0 +1,44 @@
+<mat-sidenav-container class="login-side-container">
+    <mat-sidenav mode="side" opened class="login-sidenav">
+        <div class="side-container">
+          <h2 class="logo"><mat-icon style="font-size: large;">supervised_user_circle</mat-icon>Mentor On Demand</h2>
+      <p><strong>Mentor On Demand</strong> is an online mentorship platform under the FullStack Technical. This means you can find a mentor to start your full stack journey.</p>
+      </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div class="login-main-container">
+            <h2>Sign Up Mentor On Demand</h2>
+            <mat-form-field>
+                <input matInput placeholder="Enter your name" [formControl]="name" required>
+                <mat-error *ngIf="name.hasError('required')">
+                    You must enter a name
+                  </mat-error>
+              </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Enter your email" [formControl]="email" required>
+              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Enter your password" [formControl]="password" required>
+                <mat-error *ngIf="password.hasError('required')">
+                    You must enter a password
+                  </mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                  <mat-label>Select your role</mat-label>
+                  <select matNativeControl required [formControl]="selectFormControl">
+                    <option value="3">User</option>
+                    <option value="2">Mentor</option>
+                  </select>
+                  <mat-error *ngIf="selectFormControl.hasError('required')">
+                    You must enter a role
+                  </mat-error>
+                </mat-form-field>
+              <button mat-stroked-button color="primary">SIGN UP</button>
+          </div>
+          <div class="foot">
+              <span style="margin-top: 15px;">Already have an account? <a href="/login">Log in</a></span>
+            </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

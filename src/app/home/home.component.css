@@ -1,0 +1,12 @@
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+.toolbar-button-row button,
+.toolbar-button-row a {
+  margin-right: 8px;
+}
+.toolbar-search {
+  width: 150px;
+  margin-left: 15px;
+  font-size: 15px;
+}
