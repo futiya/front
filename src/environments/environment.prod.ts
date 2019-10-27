@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  gatewayurl: 'http://sba-gateway:9000'
 };

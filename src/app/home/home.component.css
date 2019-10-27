@@ -10,3 +10,15 @@
   margin-left: 15px;
   font-size: 15px;
 }
+
+.toolbar-search mat-form-field {
+  margin-right: 15px;
+}
+.user-name {
+  font-size: larger;
+  margin-right: 10px;
+}
+
+.toolbar-mentor {
+  margin-left: 15px;
+}
