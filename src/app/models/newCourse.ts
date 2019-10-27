@@ -1,6 +1,6 @@
 export interface NewCourse {
   name: string;
-  desc: string;
+  description: string;
   skill: string;
   startDate: Date;
   endDate: Date;

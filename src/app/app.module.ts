@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserSignupComponent } from './user-signup/user-signup.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -22,6 +22,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { AlertComponent } from './alert/alert.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { AddCourseComponent } from './add-course/add-course.component';
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { ErrorInterceptor } from './helpers/error.interceptor';
 
 
 @NgModule({
@@ -32,7 +36,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     HomeComponent,
     NotFoundComponent,
     MentorListComponent,
-    AlertComponent
+    AlertComponent,
+    AddCourseComponent
   ],
   imports: [
     BrowserModule,
@@ -50,9 +55,13 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatGridListModule
   ],
-  providers: [MatDatepickerModule],
-  bootstrap: [AppComponent]
+  providers: [MatDatepickerModule,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
+  bootstrap: [AppComponent],
+  entryComponents: [AddCourseComponent]
 })
 export class AppModule { }
