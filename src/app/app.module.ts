@@ -30,6 +30,9 @@ import { CourseListComponent } from './course-list/course-list.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card';
 import { UserListComponent } from './user-list/user-list.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -63,7 +66,10 @@ import { UserListComponent } from './user-list/user-list.component';
     MatDialogModule,
     MatGridListModule,
     MatProgressSpinnerModule,
-    MatCardModule
+    MatCardModule,
+    Ng2SearchPipeModule,
+    MatTabsModule,
+    MatBadgeModule
   ],
   providers: [MatDatepickerModule,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

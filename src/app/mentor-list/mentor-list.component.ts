@@ -13,6 +13,7 @@ export class MentorListComponent implements OnInit {
   courses: Course[];
   showCourse: boolean;
   @Input() userRole: string;
+  @Input() searchText: string;
 
   constructor(private courseservice: CourseService,
               private alertService: AlertService) { }

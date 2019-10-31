@@ -8,18 +8,18 @@
     <ng-template #userbar>
     <div class="toolbar-search">
 
-        <mat-form-field>
+        <!-- <mat-form-field>
             <input matInput [matDatepicker]="picker" placeholder="Choose a date of training">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
+          </mat-form-field> -->
     <mat-form-field>
-        <input matInput placeholder="Find Mentor" type="search">
+        <input matInput placeholder="Find Mentor" type="search" name="search" [(ngModel)]="searchText" autocomplete="off"><mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
 
-      <button mat-mini-fab color="primary">
+      <!-- <button mat-mini-fab color="primary">
           <mat-icon>search</mat-icon>
-        </button>
+        </button> -->
 
     </div>
   </ng-template>
@@ -37,7 +37,7 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <app-course-list *ngIf="currentUser && currentUser.role === 'mentor'"></app-course-list>
-<app-mentor-list *ngIf="!currentUser"></app-mentor-list>
-<app-user-list *ngIf="currentUser && currentUser.role === 'user'"></app-user-list>
+<app-mentor-list [searchText]="searchText" *ngIf="!currentUser"></app-mentor-list>
+<app-user-list *ngIf="currentUser && currentUser.role === 'user'" [userRole]="currentUser.role" [searchText]="searchText"></app-user-list>
 <router-outlet></router-outlet>
 

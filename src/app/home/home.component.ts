@@ -14,6 +14,7 @@ import { AddCourseComponent } from '../add-course/add-course.component';
 export class HomeComponent implements OnInit {
 
   currentUser: User;
+  searchText: string;
 
   constructor(private authenticationService: AuthenticationService,
               private router: Router,
