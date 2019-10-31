@@ -20,6 +20,7 @@ pipeline {
         stage('Angular Build'){
         	steps{
               sh 'mkdir -p server/public'
+              sh 'npm install'
         	    sh 'ng build --prod'
         	}
 
