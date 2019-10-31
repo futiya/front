@@ -36,5 +36,8 @@
     </ng-template>
   </mat-toolbar-row>
 </mat-toolbar>
+<app-course-list *ngIf="currentUser && currentUser.role === 'mentor'"></app-course-list>
+<app-mentor-list *ngIf="!currentUser"></app-mentor-list>
+<app-user-list *ngIf="currentUser && currentUser.role === 'user'"></app-user-list>
 <router-outlet></router-outlet>
 

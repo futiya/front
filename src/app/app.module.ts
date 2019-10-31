@@ -26,7 +26,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
-
+import { CourseListComponent } from './course-list/course-list.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatCardModule} from '@angular/material/card';
+import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,9 @@ import { ErrorInterceptor } from './helpers/error.interceptor';
     NotFoundComponent,
     MentorListComponent,
     AlertComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    CourseListComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +61,9 @@ import { ErrorInterceptor } from './helpers/error.interceptor';
     MatNativeDateModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatGridListModule
+    MatGridListModule,
+    MatProgressSpinnerModule,
+    MatCardModule
   ],
   providers: [MatDatepickerModule,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

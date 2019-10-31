@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from '../models/user.model';
 import { UserService } from './user.service';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -20,12 +21,13 @@ export class AuthenticationService {
         this.currentUser = this.currentUserSubject.asObservable();
   }
 
+
   public get currentUserValue(): User {
     return this.currentUserSubject.value;
 }
 
   login(username, password) {
-    return this.http.post<any>('http://localhost:9000/auth/login', { username, password })
+    return this.http.post<any>(`${environment.gatewayurl}/auth/login`, { username, password })
             .pipe(map(user => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
             localStorage.setItem('currentUser', JSON.stringify(user));
