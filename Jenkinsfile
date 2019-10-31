@@ -19,7 +19,7 @@ pipeline {
               }
         stage('Angular Build'){
         	steps{
-              sh 'rm ./server/public/*'
+              sh 'mkdir -p server/public'
         	    sh 'ng build --prod'
         	}
 
