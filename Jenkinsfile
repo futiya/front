@@ -29,7 +29,6 @@ pipeline {
         stage('Building image') {
 	      steps{
 	        script {
-             sh 'cd server'
 	           docker.withRegistry( DOCKER_REG, DOCKER_REG_KEY ) {dockerImage = docker.build DOCKER_REPO + ":$BUILD_NUMBER"
 	           }
 	        }
