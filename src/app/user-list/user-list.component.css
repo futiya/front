@@ -30,4 +30,6 @@
   flex: 1 1 auto;
 }
 
-
+.action-spacer {
+  flex: 1 1 auto;
+}

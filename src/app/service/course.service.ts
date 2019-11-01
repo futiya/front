@@ -24,8 +24,13 @@ export class CourseService {
     return this.http.get(`${environment.gatewayurl}/course/api/v1/mentor/list`);
   }
 
-  bookCourses(id: number, username: string) {
-    return this.http.get(`${environment.gatewayurl}/course/api/v1/mentor/book?id=${id}&username=${username}`);
+  searchCourses() {
+    return this.http.get(`${environment.gatewayurl}/course/api/v1/mentor/searchcourse`);
+  }
+
+
+  bookCourses(id: number, username: string, mentorname: string) {
+    return this.http.get(`${environment.gatewayurl}/course/api/v1/mentor/book?id=${id}&username=${username}&mentorname=${mentorname}`);
   }
 
   findUserCourses(progress: number, username: string) {
