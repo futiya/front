@@ -71,10 +71,11 @@ export class AddCourseComponent implements OnInit {
         name : this.form.value.name,
         description : this.form.value.description,
         skill: this.form.value.skill,
-        startDate: this.datePipe.transform(this.form.value.startAt, 'yyyy-MM-dd'),
-        endDate: this.datePipe.transform(this.form.value.endAt, 'yyyy-MM-dd'),
+        startTime: this.datePipe.transform(this.form.value.startAt, 'yyyy-MM-dd'),
+        endTime: this.datePipe.transform(this.form.value.endAt, 'yyyy-MM-dd'),
         mentorName: this.form.value.mentorName,
-        fee: this.form.value.fee
+        fee: this.form.value.fee,
+        email: this.username
       };
       this.submitted = true;
 

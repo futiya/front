@@ -2,8 +2,8 @@ export interface MentorCourse {
   id: number;
   name: string;
   skill: string;
-  startDate: Date;
-  endDate: Date;
+  startTime: Date;
+  endTime: Date;
   status: string;
   fee: number;
   cost: number;

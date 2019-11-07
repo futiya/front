@@ -3,8 +3,8 @@ export interface Course {
   name: string;
   mentorName: string;
   skill: string;
-  startDate: Date;
-  endDate: Date;
+  startTime: Date;
+  endTime: Date;
   fee: number;
   rate: number;
   description: string;

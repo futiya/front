@@ -22,20 +22,20 @@ export class CourseService {
   }
 
   findCourses() {
-    return this.http.get(`${environment.gatewayurl}/course/api/v1/mentor/list`);
+    return this.http.get(`${environment.gatewayurl}/course/api/v1/mentor/listAll`);
   }
 
   searchCourses() {
-    return this.http.get(`${environment.gatewayurl}/course/api/v1/mentor/searchcourse`);
+    return this.http.get(`${environment.gatewayurl}/course/api/v1/user/searchcourse`);
   }
 
 
   bookCourses(bookcourse: BookCourse) {
-    return this.http.post(`${environment.gatewayurl}/course/api/v1/mentor/book`, bookcourse);
+    return this.http.post(`${environment.gatewayurl}/course/api/v1/user/book`, bookcourse);
   }
 
   findUserCourses(progress: number, username: string) {
-    return this.http.get(`${environment.gatewayurl}/course/api/v1/user/list?progress=${progress}&username=${username}`);
+    return this.http.get(`${environment.gatewayurl}/course/api/v1/user/list?username=${username}`);
   }
 
   findUserCompletedCourses(username: string) {
@@ -43,7 +43,7 @@ export class CourseService {
   }
 
   findMentorCourses(progress: number, mentorname: string) {
-    return this.http.get(`${environment.gatewayurl}/course/api/v1/listcourse?progress=${progress}&mentorname=${mentorname}`);
+    return this.http.get(`${environment.gatewayurl}/course/api/v1/listCurrentCourse?mentorname=${mentorname}`);
   }
 
   findMentorAvailableCourses(mentorname: string) {

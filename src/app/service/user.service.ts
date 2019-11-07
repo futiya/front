@@ -10,11 +10,11 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   addUser(user: NewUser) {
-    return this.http.post(`${environment.gatewayurl}/account/api/v1/add`, user);
+    return this.http.post(`${environment.gatewayurl}/user/api/v1/create`, user);
   }
 
   findUser(username: string) {
-    return this.http.get(`${environment.gatewayurl}/account/api/v1/query?username=${username}`);
+    return this.http.get(`${environment.gatewayurl}/user/api/v1/query?username=${username}`);
   }
 
 }
